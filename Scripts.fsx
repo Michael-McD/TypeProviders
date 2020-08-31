@@ -1,10 +1,15 @@
-#r "nuget: FSharp.Data"
+#r "/home/michael/.nuget/packages/fsharp.data/3.3.3/lib/netstandard2.0/FSharp.Data.dll"
+#load "Dsl.fs"
 
-open FSharp.Data
+open TypeProviders.Dsl
 
-type Questions = JsonProvider<"""https://api.stackexchange.com/2.2/questions?site=stackoverflow""">
+let ``F#`` = "F%23"
+let ``C#`` = "C%23"
 
-let fsQuestions = """https://api.stackexchange.com/2.2/questions?page=1&pagesize=20&fromdate=1593561600&todate=1598572800&order=desc&sort=activity&tagged=f%23&site=stackoverflow"""
-Questions.Load(fsQuestions).Items |> Seq.iter (fun q -> printfn "%s" q.Title)
-
-
+let queryRoot = """https://api.stackexchange.com/2.2/questions?site=stackoverflow"""
+let fsQuestions =
+    queryRoot
+    |> tagged [``F#``]
+    |> page 1
+    |> pageSize 20
+    |> getQuestions

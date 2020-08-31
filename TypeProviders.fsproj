@@ -2,11 +2,13 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.1</TargetFramework>
+        <LangVersion>preview</LangVersion>
     </PropertyGroup>
 
     <ItemGroup>
         <Compile Include="Program.fs" />
         <None Include="Scripts.fsx" />
+        <Compile Include="Dsl.fs" />
     </ItemGroup>
 
     <ItemGroup>

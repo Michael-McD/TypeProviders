@@ -1,10 +1,10 @@
 ﻿namespace TypeProviders
 
 open System
-open FSharp.Data
 
 // Define a function to construct a message to print
-module main =
+module main =        
+    open FSharp.Data
     type Questions = JsonProvider<"""https://api.stackexchange.com/2.2/questions?site=stackoverflow""">
 
     
