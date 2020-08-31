@@ -11,5 +11,31 @@ let fsQuestions =
     queryRoot
     |> tagged [``F#``]
     |> page 1
-    |> pageSize 20
+    |> pageSize 100
     |> getQuestions
+let csQuestions =
+    queryRoot
+    |> tagged [``C#``]
+    |> page 1
+    |> pageSize 100
+    |> getQuestions
+let javaQuestions =
+    queryRoot
+    |> tagged ["Java"]
+    |> page 1
+    |> pageSize 100
+    |> getQuestions
+let jsQuestions =
+    queryRoot
+    |> tagged ["JavaScript"]
+    |> page 1
+    |> pageSize 100
+    |> getQuestions
+    
+let analyzeTags (qs:Questions.Item seq) =
+    qs
+    |> Seq.collect (fun q -> q.Tags)
+    |> Seq.countBy id
+    |> Seq.filter (fun (_, count) -> count > 2)
+    |> Seq.sortBy (fun (_, count) -> count)
+    |> Seq.iter (fun (tag, count) -> printfn "%s - %i" tag count)
