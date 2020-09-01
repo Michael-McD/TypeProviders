@@ -1,6 +1,6 @@
 namespace TypeProviders
 
-module Dsl =
+module StackOverflowDsl =
     open FSharp.Data
     
     type Questions = JsonProvider<"""https://api.stackexchange.com/2.2/questions?site=stackoverflow""">

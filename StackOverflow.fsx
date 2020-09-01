@@ -1,7 +1,7 @@
 #r "/home/michael/.nuget/packages/fsharp.data/3.3.3/lib/netstandard2.0/FSharp.Data.dll"
-#load "Dsl.fs"
+#load "StackOverflowDsl.fs"
 
-open TypeProviders.Dsl
+open TypeProviders.StackOverflowDsl
 
 let ``F#`` = "F%23"
 let ``C#`` = "C%23"

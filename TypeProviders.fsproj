@@ -8,7 +8,7 @@
     <ItemGroup>
         <Compile Include="Program.fs" />
         <None Include="Scripts.fsx" />
-        <Compile Include="Dsl.fs" />
+        <Compile Include="StackOverflowDsl.fs" />
     </ItemGroup>
 
     <ItemGroup>
