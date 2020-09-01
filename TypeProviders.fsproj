@@ -6,9 +6,10 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs" />
-        <None Include="Scripts.fsx" />
         <Compile Include="StackOverflowDsl.fs" />
+        <None Include="WorldBank.fsx" />
+        <None Include="StackOverflow.fsx" />
+        <Content Include="README.md" />
     </ItemGroup>
 
     <ItemGroup>
